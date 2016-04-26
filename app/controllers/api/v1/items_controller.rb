@@ -14,7 +14,6 @@ class Api::V1::ItemsController < ApiController
   end
 
   def create
-    binding.pry
     respond_with Item.create(item_params)
   end
 
