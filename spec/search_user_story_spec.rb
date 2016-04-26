@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "searching items from storedom homepage" do
+RSpec.feature "searching items from storedom homepage" do
   it "returns 15 results for 'sennheiser' search" do
       # As a user When I visit the "/"
       visit '/'
       # And I fill in the search box with "sennheiser"
       fill_in 'search', with: "senheiser"
       # And click "search"
-      click_on "search"
+      click_on "Search"
       # Then my current path should be "/search"
       expect(current_path).to eq search_path
       # And I should see exactly 15 results
