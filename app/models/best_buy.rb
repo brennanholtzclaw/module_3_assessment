@@ -1,7 +1,8 @@
 class BestBuy
 
-  def initialize(search_term)
-    @results = BestBuyService.new.connection(search_term).get
+  def self.search(search_term)
+    service = BestBuyService.new(search_term)
+    JSON.parse(service.results.body)
+    # service.results
   end
-
 end

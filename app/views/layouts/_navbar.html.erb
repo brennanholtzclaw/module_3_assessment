@@ -21,12 +21,9 @@
       </li>
       <li>
         <%= form_tag search_index_path, method: 'get' do %>
-        <!-- <%#= form_tag search_index_path, method: 'post' do %> -->
-        <!-- <%# form_tag root_path, method: 'get' do %> -->
         <p>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag "Search" %>
-          <!-- <%#= sumbit_tag "Search", name: nil %> -->
         </p>
         <% end %>
       </li>
