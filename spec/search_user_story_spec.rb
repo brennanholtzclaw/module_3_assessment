@@ -5,7 +5,7 @@ RSpec.feature "searching items from storedom homepage" do
       # As a user When I visit the "/"
       visit '/'
       # And I fill in the search box with "sennheiser"
-      fill_in 'search', with: "senheiser"
+      fill_in 'search', with: "sennheiser"
       # And click "search"
       click_on "Search"
       # Then my current path should be "/search"
@@ -14,7 +14,7 @@ RSpec.feature "searching items from storedom homepage" do
       expect(page).to have_content("Sennheiser")
       # And each result should contain sku, name, customer average review, short description, sale price, and image ONLY
 
-      # 
+      #
 
       expect(parsed_response[0]["sku"]).to eq "filler"
       expect(parsed_response[0]["name"]).to eq "filler"
