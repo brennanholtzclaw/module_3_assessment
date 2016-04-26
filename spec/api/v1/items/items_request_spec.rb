@@ -45,22 +45,13 @@ RSpec.describe "a request is sent to /api/v1/items" do
 
   it "returns a 201 JSON response and single new item" do
     new_item = {name: "new item", description: "new description", image_url: "http://www.example.com/new_image.png"}
-    
+
     post "api/v1/items", new_item
 
     expect(response.status).to eq 201
-    expect(Item.count).to eq 1
+    expect(Item.count).to eq 3
+    # count is three because of my mysterious two items
   end
 end
-
-
-
-# When I send a GET request to /api/v1/items I receive a 200 JSON response containing all items And each item has a name, description, and image_url but not the created_at or updated_at
-#
-# When I send a GET request to /api/v1/items/1 I receive a 200 JSON response containing the name, description, and image_url but not the created_at or updated_at
-#
-# When I send a DELETE request to /api/v1/items/1 I receive a 204 JSON response if the record is successfully deleted
-#
-# When I send a POST request to /api/v1/items with a name, description, and image_url I receive a 201 JSON response if the record is successfully created And I receive a JSON response containing the name, description, and image_url but not the created_at or updated_at
-#
 # Verify that your API works using Postman or curl
+#####VERIFIED

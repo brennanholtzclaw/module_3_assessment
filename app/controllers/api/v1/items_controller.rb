@@ -15,6 +15,11 @@ class Api::V1::ItemsController < ApiController
 
   def create
     binding.pry
-    respond_with Item.create_by(params)
+    respond_with Item.create(item_params)
   end
+
+  private
+    def item_params
+      params.permit(:name, :description, :image_url)
+    end
 end
