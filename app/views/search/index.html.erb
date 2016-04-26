@@ -1,1 +1,10 @@
-<%= @items %>
+<ol>
+<% @items["products"].each do |product| %>
+    <%= product["sku"] %>
+    <%= product["name"] %>
+    <%= product["customerReviewAverage"] %>
+    <%= product["shortDescription"] %>
+    <%= product["salePrice"] %>
+    <%= image_tag(product["image"]) %>
+<% end %>
+</ol>

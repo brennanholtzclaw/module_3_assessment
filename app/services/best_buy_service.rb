@@ -8,15 +8,8 @@ class BestBuyService
     connection.params["format"] = "json"
   end
 
-  def base_url
-     "https://api.bestbuy.com/v1/products"
-  end
-
   def results
-  # def results(search_term)
     connection.get
-    # connection.get("(longDescription=#{search_term}*)")
-    # (longDescription=#{search_term}*)
   end
 
   def connection
