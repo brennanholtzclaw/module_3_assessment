@@ -2,9 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "a GET request to /api/v1/items" do
   it "returns a 200 JSON response" do
-    def parsed_response
-      JSON.parse(response.body)
-    end
 
     item1 = Item.create(name: "test name", description: "test description", image_url: "http://www.example.com/test_image.png")
 
