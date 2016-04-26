@@ -2,13 +2,21 @@ require 'rails_helper'
 
 RSpec.describe "a GET request to /api/v1/items" do
   it "returns a 200 JSON response" do
-    def returned_data(data)
-      JSON.parse(data.body)
+    def parsed_response
+      JSON.parse(response.body)
     end
+
+    item1 = Item.create(name: "test name", description: "test description", image_url: "http://www.example.com/test_image.png")
 
     get "api/v1/items"
 
-    expect(response.is_json).to eq true
+    # expect(response.is_json).to eq true
+    expect(response.status).to eq 200
+    expect(parsed_response[0]["name"]).to eq item1.name
+    expect(parsed_response[0]["description"]).to eq item1.description
+    expect(parsed_response[0]["image_url"]).to eq item1.image_url
+    expect(parsed_response[0]["created_at"]).to eq nil
+    expect(parsed_response[0]["updated_at"]).to eq nil
   end
 end
 
